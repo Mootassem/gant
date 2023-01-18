@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/type-depense`,
+    require('./typeDepenseCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/type-depense/:id`,
+    require('./typeDepenseUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/type-depense/import`,
+    require('./typeDepenseImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/type-depense`,
+    require('./typeDepenseDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-depense/autocomplete`,
+    require('./typeDepenseAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-depense`,
+    require('./typeDepenseList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-depense/:id`,
+    require('./typeDepenseFind').default,
+  );
+};

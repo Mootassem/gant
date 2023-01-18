@@ -1,0 +1,35 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/partner`,
+    require('./partnerCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/partner/:id`,
+    require('./partnerUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/partner/import`,
+    require('./partnerImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/partner`,
+    require('./partnerDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/partner/autocomplete`,
+    require('./partnerAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/partner`,
+    require('./partnerList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/partner/:id`,
+    require('./partnerFind').default,
+  );
+  // Count //
+  app.get(
+    `/tenant/:tenantId/partnerc`,
+    require('./partnerCount').default,
+  );
+};

@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/type-charge`,
+    require('./typeChargeCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/type-charge/:id`,
+    require('./typeChargeUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/type-charge/import`,
+    require('./typeChargeImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/type-charge`,
+    require('./typeChargeDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-charge/autocomplete`,
+    require('./typeChargeAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-charge`,
+    require('./typeChargeList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-charge/:id`,
+    require('./typeChargeFind').default,
+  );
+};

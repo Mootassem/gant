@@ -1,0 +1,34 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/objectif`,
+    require('./objectifCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/objectif/:id`,
+    require('./objectifUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/objectif/import`,
+    require('./objectifImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/objectif`,
+    require('./objectifDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/objectif/autocomplete`,
+    require('./objectifAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/objectif`,
+    require('./objectifList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/objectif/:id`,
+    require('./objectifFind').default,
+  );
+  app.get(
+    `/tenant/:tenantId/objectifs`,
+    require('./objectifStatus').default,
+  );
+};
